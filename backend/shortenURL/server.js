@@ -4,13 +4,13 @@
 * ***************************************************/
 
 'use strict';
-
+require('dotenv').config();
 var fs = require('fs');
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 var urlController = require('./controllers/url.controller');
-
+console.log(process.env);
 
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function (req, res, next) {
