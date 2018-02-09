@@ -10,7 +10,7 @@ var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 var urlController = require('./controllers/url.controller');
-console.log(process.env);
+const dbURL = process.env.MONGO_URL || process.env.DB_LOCALHOST;
 
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function (req, res, next) {
@@ -62,7 +62,7 @@ app.use(function (err, req, res, next) {
   }
 });
 
-mongoose.connect('mongodb://localhost:27017/fcc-backend-shortenURL').then(
+mongoose.connect(dbURL).then(
   () => { console.log('connect to mongo successfully'); },
   err => { console.log('error on connect mongodb: ', err); }
 );
