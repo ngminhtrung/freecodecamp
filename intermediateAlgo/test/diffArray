@@ -1,0 +1,25 @@
+var diffArray = require("../diffArray");
+
+var chai = require("chai");
+var expect = chai.expect;
+var a = [4];
+
+describe("diffArray", function () {
+    it("So sánh 2 arrays toàn số", function () {
+        expect(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])).to.have.same.members(a);
+    });
+
+    it("So sánh 2 arrays toàn string", function () {
+        expect(diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"])).to.have.same.members(["pink wool"]);
+
+        expect(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"])).to.have.same.members(["diorite", "pink wool"]);
+
+        expect(diffArray(["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"])).to.have.same.members([]);
+    });
+
+    it("So sánh 2 arrays trộn giữa số và string", function () {
+        expect(diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4])).to.have.same.members(["piglet", 4]);
+        expect(diffArray([], ["snuffleupagus", "cookie monster", "elmo"])).to.have.same.members(["snuffleupagus", "cookie monster", "elmo"]);
+        expect(diffArray([1, "calf", 3, "piglet"], [7, "filly"])).to.have.same.members([1, "calf", 3, "piglet", 7, "filly"]);
+    })
+})

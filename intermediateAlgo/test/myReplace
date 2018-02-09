@@ -1,0 +1,43 @@
+var myReplace = require("../myReplace");
+
+var chai = require("chai");
+var expect = chai.expect; 
+
+describe("myReplace", function() {
+
+    it(`myReplace("Let us go to the store", "store", "mall") 
+        should return "Let us go to the mall"`, 
+        function() {
+        expect(myReplace("Let us go to the store", "store", "mall"))
+        .to.be.equal("Let us go to the mall");
+    });
+
+    it(`myReplace("He is Sleeping on the couch", "Sleeping", "sitting") 
+        should return "He is Sitting on the couch".`, 
+        function() {
+        expect(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"))
+        .to.be.equal("He is Sitting on the couch");
+    });
+
+    it(`myReplace("This has a spellngi error", "spellngi", "spelling") 
+        should return "This has a spelling error".`, 
+        function() {
+        expect(myReplace("This has a spellngi error", "spellngi", "spelling"))
+        .to.be.equal("This has a spelling error");
+    });
+
+    it(`myReplace("His name is Tom", "Tom", "john") 
+        should return "His name is John".`, 
+        function() {
+        expect(myReplace("His name is Tom", "Tom", "john"))
+        .to.be.equal("His name is John");
+    });
+
+    it(`myReplace("Let us get back to more Coding", "Coding", "algorithms") 
+        should return "Let us get back to more Algorithms".`, 
+        function() {
+        expect(myReplace("Let us get back to more Coding", "Coding", "algorithms"))
+        .to.be.equal("Let us get back to more Algorithms");
+    });
+
+})

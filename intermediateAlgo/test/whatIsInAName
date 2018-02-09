@@ -1,0 +1,49 @@
+var whatIsInAName = require("../whatIsInAName");
+
+var chai = require("chai");
+var expect = chai.expect;
+var assert = chai.assert;
+
+describe("Use Assertation: ", function () {
+    var result = whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+
+    var expectation = [{ first: "Tybalt", last: "Capulet" }];
+
+    it("First case", function () {
+        assert.deepEqual(result, expectation)
+    });
+});
+
+describe("whatIsInAName: ", function () {
+    var result = whatIsInAName([{ "a": 1 }, { "a": 1 }, { "a": 1, "b": 2 }], { "a": 1 });
+
+    var expectation = [{ "a": 1 }, { "a": 1 }, { "a": 1, "b": 2 }];
+
+    it("Second case", function () {
+        assert.deepEqual(result, expectation)
+    });
+});
+
+describe("whatIsInAName", function () {
+
+    var result = whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "c": 2 });
+
+    var expectation = [{ "a": 1, "b": 2, "c": 2 }];
+
+    it("Third case", function () {
+        assert.deepEqual(result, expectation)
+    });
+
+});
+
+describe("whatIsInAName", function () {
+ 
+    var result = whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "b": 2 });
+    
+        var expectation = [{ "a": 1, "b": 2 }, { "a": 1, "b": 2, "c": 2 }];
+    
+        it("Third case", function () {
+            assert.deepEqual(result, expectation)
+        });
+
+});

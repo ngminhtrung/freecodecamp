@@ -1,0 +1,19 @@
+var sumAll = require("../sumAll");
+
+var chai = require("chai");
+var expect = chai.expect; 
+
+describe("sumAll", function() {
+
+    it("Xuôi - Số thứ 2 lớn hơn số đầu - Trả về tổng của 2 số và mọi số nằm giữa chúng", function() {
+        expect(sumAll([1,4])).to.equal(10);
+        expect(sumAll([5,10])).to.equal(45);
+    });
+
+    it("Ngược - Số thứ 2 nhỏ hơn số đầu - Trả về tổng của 2 số và mọi số nằm giữa chúng", function() {
+        expect(sumAll([4,1])).to.equal(10);
+        expect(sumAll([10,5])).to.equal(45);
+    });
+
+
+})

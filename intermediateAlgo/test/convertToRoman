@@ -1,0 +1,109 @@
+var convertToRoman = require("../convertToRoman");
+
+var chai = require("chai");
+var expect = chai.expect; 
+
+describe("Cùng kiểm tra convertToRoman nhé!", function() {
+
+    it("Hàm convertToRoman(2) cần trả về 'II'.",function() {
+        expect(convertToRoman(2)).to.be.equal("II");
+    });
+
+    it("convertToRoman(3) should return 'III'.",function() {
+        expect(convertToRoman(3)).to.be.equal("III");
+    });
+
+    it("convertToRoman(4) should return 'IV'.",function() {
+        expect(convertToRoman(4)).to.be.equal("IV");
+    });
+
+    it("convertToRoman(5) should return 'V'.",function() {
+        expect(convertToRoman(5)).to.be.equal("V");
+    });
+
+    it("convertToRoman(9) should return 'IX'.",function() {
+        expect(convertToRoman(9)).to.be.equal("IX");
+    });
+    it("convertToRoman(12) should return 'XII'.",function() {
+        expect(convertToRoman(12)).to.be.equal("XII");
+    });
+    it("convertToRoman(16) should return 'XVI'.",function() {
+        expect(convertToRoman(16)).to.be.equal("XVI");
+    });
+    it("convertToRoman(29) should return 'XXIX'.",function() {
+        expect(convertToRoman(29)).to.be.equal("XXIX");
+    });
+
+    it("convertToRoman(44) should return 'XLIV",function() {
+        expect(convertToRoman(44)).to.be.equal("XLIV");
+    });
+
+    it("convertToRoman(45) should return 'XLV",function() {
+        expect(convertToRoman(45)).to.be.equal("XLV");
+    });
+
+    it("convertToRoman(68) should return 'LXVIII",function() {
+        expect(convertToRoman(68)).to.be.equal("LXVIII");
+    });
+
+    it("convertToRoman(83) should return 'LXXXIII",function() {
+        expect(convertToRoman(83)).to.be.equal("LXXXIII");
+    });
+
+    it("convertToRoman(97) should return 'XCVII",function() {
+        expect(convertToRoman(97)).to.be.equal("XCVII");
+    });
+
+    it("convertToRoman(99) should return 'XCIX",function() {
+        expect(convertToRoman(99)).to.be.equal("XCIX");
+    });
+
+    it("convertToRoman(500) should return 'D",function() {
+        expect(convertToRoman(500)).to.be.equal("D");
+    });
+
+    it("convertToRoman(501) should return 'DI",function() {
+        expect(convertToRoman(501)).to.be.equal("DI");
+    });
+
+    it("convertToRoman(649) should return 'DCXLIX",function() {
+        expect(convertToRoman(649)).to.be.equal("DCXLIX");
+    });
+
+    it("convertToRoman(798) should return 'DCCXCVIII",function() {
+        expect(convertToRoman(798)).to.be.equal("DCCXCVIII");
+    });
+
+    it("convertToRoman(891) should return 'DCCCXCI",function() {
+        expect(convertToRoman(891)).to.be.equal("DCCCXCI");
+    });
+
+    it("convertToRoman(1000) should return 'M",function() {
+        expect(convertToRoman(1000)).to.be.equal("M");
+    });
+
+    it("convertToRoman(1004) should return 'MIV",function() {
+        expect(convertToRoman(1004)).to.be.equal("MIV");
+    });
+
+    it("convertToRoman(1006) should return 'MVI",function() {
+        expect(convertToRoman(1006)).to.be.equal("MVI");
+    });
+
+    it("convertToRoman(1023) should return 'MXXIII",function() {
+        expect(convertToRoman(1023)).to.be.equal("MXXIII");
+    });
+
+    it("convertToRoman(2014) should return 'MMXIV",function() {
+        expect(convertToRoman(2014)).to.be.equal("MMXIV");
+    });
+
+    it("convertToRoman(3999) should return 'MMMCMXCIX",function() {
+        expect(convertToRoman(3999)).to.be.equal("MMMCMXCIX");
+    });
+
+
+
+
+
+})
